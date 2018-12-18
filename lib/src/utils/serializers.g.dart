@@ -19,5 +19,17 @@ part of 'serializers.dart';
 // ignore_for_file: unnecessary_new
 // ignore_for_file: test_types_in_equals
 
-Serializers _$serializers =
-    (new Serializers().toBuilder()..add(Message.serializer)).build();
+Serializers _$serializers = (new Serializers().toBuilder()
+      ..add(Chat.serializer)
+      ..add(Message.serializer)
+      ..add(MessageEntity.serializer)
+      ..add(User.serializer)
+      ..addBuilderFactory(
+          const FullType(List, const [const FullType(MessageEntity)]),
+          () => new ListBuilder<MessageEntity>())
+      ..addBuilderFactory(
+          const FullType(List, const [const FullType(MessageEntity)]),
+          () => new ListBuilder<MessageEntity>())
+      ..addBuilderFactory(const FullType(List, const [const FullType(User)]),
+          () => new ListBuilder<User>()))
+    .build();

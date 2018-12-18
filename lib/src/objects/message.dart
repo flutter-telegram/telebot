@@ -1,5 +1,8 @@
 import 'package:built_value/built_value.dart';
 import 'package:built_value/serializer.dart';
+import 'package:telebot/src/objects/chat.dart';
+import 'package:telebot/src/objects/message_entity.dart';
+import 'package:telebot/src/objects/user.dart';
 
 part 'message.g.dart';
 
@@ -8,18 +11,18 @@ abstract class Message implements Built<Message, MessageBuilder> {
 
   int get message_id;
 
-//  @nullable
-//  User get from;
+  @nullable
+  User get from;
 
   int get date;
 
-//  Chat get chat;
+  Chat get chat;
 
-//  @nullable
-//  User get forward_from;
+  @nullable
+  User get forward_from;
 
-//  @nullable
-//  Chat get forward_from_chat;
+  @nullable
+  Chat get forward_from_chat;
 
   @nullable
   int get forward_from_message_id;
@@ -45,11 +48,11 @@ abstract class Message implements Built<Message, MessageBuilder> {
   @nullable
   String get text;
 
-//  @nullable
-//  List<MessageEntity> get entities;
-//
-//  @nullable
-//  List<MessageEntity> get caption_entities;
+  @nullable
+  List<MessageEntity> get entities;
+
+  @nullable
+  List<MessageEntity> get caption_entities;
 //
 //  @nullable
 //  Audio get audio;
@@ -77,10 +80,10 @@ abstract class Message implements Built<Message, MessageBuilder> {
 //
 //  @nullable
 //  VideoNote get video_note;
-//
-//  @nullable
-//  String get caption;
-//
+
+  @nullable
+  String get caption;
+
 //  @nullable
 //  Contact get contact;
 //
@@ -89,39 +92,39 @@ abstract class Message implements Built<Message, MessageBuilder> {
 //
 //  @nullable
 //  Venue get venue;
-//
-//  @nullable
-//  List<User> get new_chat_members;
-//
-//  @nullable
-//  User get left_chat_member;
-//
-//  @nullable
-//  String get new_chat_title;
-//
+
+  @nullable
+  List<User> get new_chat_members;
+
+  @nullable
+  User get left_chat_member;
+
+  @nullable
+  String get new_chat_title;
+
 //  @nullable
 //  List<PhotoSize> get new_chat_photo;
-//
-//  @nullable
-//  bool get delete_chat_photo;
-//
-//  @nullable
-//  bool get group_chat_created;
-//
-//  @nullable
-//  bool get supergroup_chat_created;
-//
-//  @nullable
-//  bool get channel_chat_created;
-//
-//  @nullable
-//  int get migrate_to_chat_id;
-//
-//  @nullable
-//  int get migrate_from_chat_id;
-//
-//  @nullable
-//  Message get pinned_message;
+
+  @nullable
+  bool get delete_chat_photo;
+
+  @nullable
+  bool get group_chat_created;
+
+  @nullable
+  bool get supergroup_chat_created;
+
+  @nullable
+  bool get channel_chat_created;
+
+  @nullable
+  int get migrate_to_chat_id;
+
+  @nullable
+  int get migrate_from_chat_id;
+
+  @nullable
+  Message get pinned_message;
 //
 //  @nullable
 //  Invoice get invoice;
@@ -129,8 +132,8 @@ abstract class Message implements Built<Message, MessageBuilder> {
 //  @nullable
 //  SuccessfulPayment get successful_payment;
 //
-//  @nullable
-//  String get connected_website;
+  @nullable
+  String get connected_website;
 //
 //  @nullable
 //  PassportData get passport_data;
